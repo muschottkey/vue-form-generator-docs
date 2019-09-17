@@ -10,13 +10,17 @@ A group in the schema groups related fields. Groups are currently output as a `<
             fields: [
                 {
                     type: "input",
-                    inputType: "text",
+                    fieldOptions: {
+                        inputType: "text",
+                    },
                     label: "Name",
                     model: "name"
                 },
                 {
                     type: "input",
-                    inputType: "number",
+                    fieldOptions: {
+                        inputType: "number",
+                    },
                     id: "current_age",
                     label: "Age",
                     model: "age"

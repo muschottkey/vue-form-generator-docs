@@ -9,7 +9,9 @@ This "Age" field will output a numeric input field, and has uses the built-in `i
 ```js
 {
     type: "input",
-    inputType: "number",
+    fieldOptions: {
+        inputType: "number"
+    },
     label: "Age",
     model: "user_age",
     required: true,
@@ -23,7 +25,9 @@ This password field uses the built-in `string` validator, with custom validation
 ```js
 {
     type: "input",
-    inputType: "password",
+    fieldOptions: {
+        inputType: "password",
+    },
     label: "Password",
     model: "password",
     min: 6,
@@ -50,7 +54,9 @@ To set the validator for a field, you add a `validator:` property to its schema.
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+        inputType: "text",
+    },
     label: "Name",
     model: "name",
     min: 3,
@@ -68,7 +74,9 @@ String values are just shortcuts for `validators.<function_name>`, i.e. this is 
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+        inputType: "text",
+    },
     label: "Name",
     model: "name",
     min: 3,
@@ -84,7 +92,9 @@ If you want multiple validators for a field, you can specify an array of validat
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+        inputType: "text",
+    },
     label: "Name",
     model: "name",
     min: 3,
@@ -98,7 +108,9 @@ or function names:
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+        inputType: "text",
+    },
     label: "Name",
     model: "name",
     min: 3,
@@ -145,7 +157,9 @@ You can then reference these in your field schema by their name:
 ```
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+        inputType: "text",
+    },
     model: "model",
     validator: ["firstCustomValidator", "secondCustomValidator", "alwaysInvalid"]
 }
