@@ -24,9 +24,9 @@ Property   | Default  | Accepted values       | Description
 
 ```js
 {
-	type: "checklist",
-	label: "Skills",
-	model: "skills",
+  type: "checklist",
+  label: "Skills",
+  model: "skills",
   fieldOptions: {
     listBox: true
   },
