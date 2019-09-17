@@ -13,13 +13,17 @@ This simple form will have a text input for Name and a numeric input for Age.
     fields: [
         {
             type: "input",
-            inputType: "text",
+            fieldOptions: {
+                inputType: "text",
+            },
             label: "Name",
             model: "name"
         },
         {
             type: "input",
-            inputType: "number",
+            fieldOptions: {
+                inputType: "number",
+            },
             id: "current_age",
             label: "Age",
             model: "age"
@@ -73,7 +77,9 @@ Sections are currently output as `<fieldset>` elements, with a `<legend>`.
                 },
                 {
                     type: "input",
-                    inputType: "number",
+                    fieldOptions: {
+                        inputType: "number",
+                    },
                     id: "timeout",
                     label: "Timeout in Seconds",
                     model: "timeout"
@@ -91,7 +97,9 @@ It is also possible to have a schema with some fields grouped and some ungrouped
     fields: [
         {
             type: "input",
-            inputType: "text",
+            fieldOptions: {
+                inputType: "text",
+            },
             label: "Name",
             model: "name"
         }
@@ -102,7 +110,9 @@ It is also possible to have a schema with some fields grouped and some ungrouped
             fields: [
                 {
                     type: "input",
-                    inputType: "number",
+                    fieldOptions: {
+                        inputType: "number",
+                    },
                     id: "current_age",
                     label: "Age",
                     model: "age"
