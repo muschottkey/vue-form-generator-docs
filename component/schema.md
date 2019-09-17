@@ -49,13 +49,17 @@ Sections are currently output as `<fieldset>` elements, with a `<legend>`.
             fields: [
                 {
                     type: "input",
-                    inputType: "text",
+                    fieldOptions: {
+                        inputType: "text",
+                    },
                     label: "Username",
                     model: "username"
                 },
                 {
                     type: "input",
-                    inputType: "email",
+                    fieldOptions: {
+                        inputType: "email",
+                    },
                     id: "email",
                     label: "Email Address",
                     model: "email"
