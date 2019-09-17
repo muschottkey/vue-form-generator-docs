@@ -1,5 +1,5 @@
 # dateTimePicker field
-This is a dateTime picker field for date/time/datetime values. 
+This is a dateTime picker field for date/time/datetime values.
 
 > Please note, this field depend on the following library:
 - [jQuery](http://www.jquery.com)
@@ -9,16 +9,16 @@ This is a dateTime picker field for date/time/datetime values.
 ## Special properties of field
 
 Property      | Default  | Accepted values    | Description
-------------- | -------- | ------------------ | ----------- 
+------------- | -------- | ------------------ | -----------
 `autocomplete` | _none_   | [see doc](https://html.spec.whatwg.org/multipage/forms.html#autofill)        | Indicates whether the value of the control can be automatically completed by the browser.
-`dateTimePickerOptions` | `{}` | `Object` 		| Settings to dateTimePicker. [Read more info from options](http://eonasdan.github.io/bootstrap-datetimepicker/Options/)
+`fieldOptions` | `{}` | `Object` 		| Settings to dateTimePicker. [Read more info from options](http://eonasdan.github.io/bootstrap-datetimepicker/Options/)
 `format`	  | `null`   | `String` or `null` | Format of the value of model. If `null`, use the Unix timestamp format (eg: 1462913010557). If a `String`, format the Date with `moment` (eg: `format: "YYYY.MM.DD"`).
 `max` 		  | _none_   | `Number` 	      | Max value (need to use `validators.number`)
 `min` 		  | _none_   | `Number` 	      | Min value (need to use `validators.number`)
 `placeholder` | _none_   | `String` 	      | Placeholder text for input field
 `readonly`    | `false`  | `Boolean` 	      | If true, the input field is read only
 
-### dateTimePickerOptions
+### fieldOptions
 @TODO
 ## Usage
 #### Field for date-of-birth with min, max limits and age calculator.
@@ -32,11 +32,11 @@ Property      | Default  | Accepted values    | Description
     min: moment("1900-01-01").toDate(),
     max: moment("2016-01-01").toDate(),
     validator: validators.date,
-    
-    dateTimePickerOptions: {
+
+    fieldOptions: {
         format: "YYYY-MM-DD"
-    },			
-    
+    },
+
     onChanged: function(model, newVal, oldVal, field) {
         model.age = moment().year() - moment(newVal).year();
     }
@@ -48,7 +48,7 @@ Property      | Default  | Accepted values    | Description
         type: "dateTimePicker",
         label: "DT",
         model: "dt",
-        dateTimePickerOptions: {
+        fieldOptions: {
             format: "YYYY-MM-DD HH:mm:ss"
         }
     }
@@ -60,7 +60,7 @@ Property      | Default  | Accepted values    | Description
         label: "Start time",
         model: "startTime",
         format: "HH:mm:ss",
-        dateTimePickerOptions: {
+        fieldOptions: {
             format: "HH:mm:ss"
         }
     }

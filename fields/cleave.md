@@ -11,11 +11,11 @@ Format input text content when you are typing.
 Property 		| Default | Accepted values | Description
 --------------- | ------- | --------------- | -----------
 `autocomplete` | _none_   | [see doc](https://html.spec.whatwg.org/multipage/forms.html#autofill)        | Indicates whether the value of the control can be automatically completed by the browser.
-`cleaveOptions`   | `{}`    | `Object`        | Settings to select component. See details below.
+`fieldOptions`   | `{}`    | `Object`        | Settings to select component. See details below.
 `placeholder` | _none_   | `String` 	   | Placeholder text for input field
 `readonly`    | `false`  | `Boolean` 	   | If true, the input field is read only
 
-### `cleaveOptions`
+### `fieldOptions`
 
 For more details, see the official [cleave.js documentation](https://github.com/nosir/cleave.js/blob/master/doc/options.md).
 
@@ -46,11 +46,11 @@ Property 	                 | Default           | Accepted values 	 | Description
 {
   type: "cleave",
   label: "Credit card number formatting",
-  model: "credit",    
-  cleaveOptions: {    
+  model: "credit",
+  fieldOptions: {
     creditCard: true,
     onCreditCardTypeChanged: function(type) {
-      console.log("onCreditCardTypeChanged", type);	
+      console.log("onCreditCardTypeChanged", type);
     }
   }
 }
@@ -61,8 +61,8 @@ Property 	                 | Default           | Accepted values 	 | Description
 {
   type: "cleave",
   label: "Phone number formatting",
-  model: "phone",    
-  cleaveOptions: {		
+  model: "phone",
+  fieldOptions: {
     phone: true,
     phoneRegionCode: 'FR',
   }
@@ -73,8 +73,8 @@ Property 	                 | Default           | Accepted values 	 | Description
 {
   type: "cleave",
   label: "Date formatting",
-  model: "date",    
-  cleaveOptions: {
+  model: "date",
+  fieldOptions: {
     date: true,
     datePattern: ['d', 'm', 'Y'],
   }
@@ -85,8 +85,8 @@ Property 	                 | Default           | Accepted values 	 | Description
 {
   type: "cleave",
   label: "Numeral formatting",
-  model: "number",    
-  cleaveOptions: {
+  model: "number",
+  fieldOptions: {
     numeral: true,
     numeralThousandsGroupStyle: 'thousand',
     numeralDecimalScale: 2,
@@ -99,11 +99,11 @@ Property 	                 | Default           | Accepted values 	 | Description
 {
   type: "cleave",
   label: "Custom formatting",
-  model: "special",    
-  cleaveOptions: {
+  model: "special",
+  fieldOptions: {
     blocks: [0, 2, 0, 3, 4],
     delimiter: ' ',
-    delimiters: ['(', ')', ' ', '-', '-'],    
+    delimiters: ['(', ')', ' ', '-', '-'],
     numericOnly: true,
     uppercase: false,
     lowercase: false
