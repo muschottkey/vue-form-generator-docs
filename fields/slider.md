@@ -14,19 +14,20 @@ This is a range slider input field.
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
 | `autocomplete` | _none_ | [see doc](https://html.spec.whatwg.org/multipage/forms.html#autofill) | Indicates whether the value of the control can be automatically completed by the browser. |
-| `max` | 100 | `Number` | Max value \(need to use `validators.number`\) |
-| `min` | 10 | `Number` | Min value \(need to use `validators.number`\) |
 | `placeholder` | _none_ | `String` | Placeholder text for input field |
 | `readonly` | `false` | `Boolean` | If true, the input field is read only |
-| `rangeSliderOptions` | `{}` | `Object` | Settings to slider. See details below. |
-| `step` | 1 | `Number` | Set sliders step. Always &gt; 0. Could be fractional. |
+| `fieldOptions` | `{}` | `Object` | Settings to slider. See details below. |
 
-### `rangeSliderOptions`
+### `fieldOptions`
 
 For more details, see the official  [rangeSlider documentation](http://ionden.com/a/plugins/ion.rangeSlider/demo.html).
 
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
+| `autocomplete` | _none_ | `Boolean` | Enable or disable browser autocompletion |
+| `step` | 1 | `Number` | Set sliders step. Always &gt; 0. Could be fractional. |
+| `min` | 10 | `Number` | Min value \(need to use `validators.number`\) |
+| `step` | 1 | `Number` | Set sliders step. Always &gt; 0. Could be fractional. |
 | `type` | "single" | `String` | Choose slider type, could be single - for one handle, or double for two handles |
 | `from` | min | `Number` | Set start position for left handle \(or for single handle\) |
 | `to` | max | `Number` | Set start position for right handle |
@@ -70,10 +71,10 @@ For more details, see the official  [rangeSlider documentation](http://ionden.co
     type: "rangeSlider",
     label: "Rank",
     model: "rank",
-    min: 1,
-    max: 10,
     required: true,
-    rangeSliderOptions: {
+    fieldOptions: {
+        min: 1,
+        max: 10,
         grid: true
     },
     validator: validators.integer
@@ -93,9 +94,9 @@ rank: 6
     type: "rangeSlider",
     label: "Income",
     model: "income",
-    min: 0,
-    max: 100000,
-    rangeSliderOptions: {
+    fieldOptions: {
+        min: 0,
+        max: 100000,
         type: "double",
         prefix: "$",
         step: 1000

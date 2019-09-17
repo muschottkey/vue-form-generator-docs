@@ -9,17 +9,18 @@ Lightweight JavaScript range slider.
 
 Property 		| Type 			| Description
 --------------- | ------------- | -----------
-`max`             | `Number`      | Largest value that the slider can select.
-`min`             | `Number`      | Smallest value that the slider can select.
-`noUiSliderOptions`   | `Object` 		| Settings of slider component. See details below.
+`fieldOptions`   | `Object` 		| Settings of slider component. See details below.
 `values` 			| `Array` or `Function` 		| List of items. It can be an array with items, or a function, what is resulted an array. The item will be a `String` or an object with an `id` and a `name` properties.
 
-### `noUiSliderOptions`
+### `fieldOptions`
 
 For more details, see the official [noUiSlider documentation](http://refreshless.com/nouislider/slider-options/).
 
 Property    | Default        | Accepted values                                     | Description
 ----------- | -------------- | --------------------------------------------------- | -----------
+`autocomplete`| `false`      | `Boolean`                                           | Enable or disable browser autocompleting the field
+`max`       | `Number`       | `Number`                                            | Largest value that the slider can select.
+`min`       | `Number`       | `Number`                                            | Smallest value that the slider can select.
 connect     | `"lower"`      | `"lower"`, `"upper"`, `Boolean`                     | The connect setting can be used to control the (green) bar between the handles, or the edges of the slider. Use `"lower"` to connect to the lower side, or `"upper"` to connect to the upper side. Setting `true` sets the bar between the handles.
 margin      | _none_         | `Number`                                            | When using two handles, the minimum distance between the handles can be set using the margin option. The margin value is relative to the value set in 'range'. This option is only available on standard linear sliders.
 limit       | _none_         | `Number`                                            | The limit option is the oposite of the margin option, limiting the maximum distance between two handles. As with the margin option, the limit option can only be used on linear sliders.
@@ -38,10 +39,10 @@ pips        | _none_         | `Object`                                         
   type: "noUiSlider",
   label: "Volume level",
   model: "volume",
-  min: 0,
-  max: 100,
   required: true,
-  noUiSliderOptions: {
+  fieldOptions: {
+    min: 0,
+    max: 100,
     connect: "lower",
   },
   validator: validators.required
@@ -54,10 +55,10 @@ pips        | _none_         | `Object`                                         
   type: "noUiSlider",
   label: "Volume level",
   model: "volume",
-  min: 0,
-  max: 140,
   required: true,
-  noUiSliderOptions: {
+  fieldOptions: {
+    min: 0,
+    max: 140,
     connect: "lower",
     step: 10,
     pips: {
@@ -72,7 +73,7 @@ pips        | _none_         | `Object`                                         
           return value.replace('dB', '');
         }
       }
-	}
+	  }
   },
   validator: validators.required
 }
@@ -83,11 +84,11 @@ pips        | _none_         | `Object`                                         
   type: "noUiSlider",
   label: "Vertical reversed non-linear slider with scale",
   model: "power",
-  min: 0,
-  noUiSliderOptions: {
+  fieldOptions: {
+    min: 0,
     connect: "lower",
     orientation: 'vertical',
-	direction: 'rtl',
+	  direction: 'rtl',
     range:{
       'min': [     0 ],
       '10%': [   500,  500 ],
@@ -95,9 +96,9 @@ pips        | _none_         | `Object`                                         
       'max': [ 10000 ]
     },
     pips: {
-		mode: 'range',
-		density: 3
-	}
+		  mode: 'range',
+		  density: 3
+	  }
   }  
 }
 ```

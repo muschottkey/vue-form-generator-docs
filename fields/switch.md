@@ -1,7 +1,8 @@
 # switch field
 This is a switch/toogle input field for any values. It can toggle true/false, yes/no, on/off values.
 
-## Special properties of field
+## fieldOptions
+
 Property      | Default  | Accepted values            | Description
 ------------- | -------- | -------------------------- | ----------- 
 `textOn`	  | _none_   | `String` 	              | Visible label if the switch state is on
@@ -17,8 +18,10 @@ Simple example with active/inactive labels
     type: "switch",
     label: "Status (switch field)",
     model: "status",
-    textOn: "Active",
-    textOff: "Inactive"
+    fieldOptions: {
+        textOn: "Active",
+        textOff: "Inactive"
+    }
 }
 ```
 
@@ -28,10 +31,12 @@ Example with male/female model values
     type: "switch",
     label: "Sex",
     model: "sex",
-    textOn: "Female",
-    textOff: "Male",
-    valueOn: "female",
-    valueOff: "male"
+    fieldOptions: {
+        textOn: "Female",
+        textOff: "Male",
+        valueOn: "female",
+        valueOff: "male"
+    }
 }
 ```
 

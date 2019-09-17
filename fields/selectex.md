@@ -9,12 +9,19 @@ This is a select list field for multiple selection.
 ## Special properties of field
 
 Property        | Default  | Accepted values | Description
---------------- | -------- | --------------- | ----------- 
-`multiSelect`   | _none_   | `Boolean`       | If `true`, you can select multiple items. In this case the value will be an `Array`
+--------------- | -------- | --------------- | -----------
 `values`        | _none_   | `Array` or `Function` | List of items. It can be an array with items, or a function, what is resulted an array. The item will be a `String` or an object with an `id` and a `name` properties.
-`selectOptions` | `{}`     | `Object` 		| Settings to select component. [Read more info from options](https://silviomoreto.github.io/bootstrap-select/options/)
-### selectOptions
-@TODO
+`fieldOptions` | `{}`     | `Object` 		| Settings to select component. [Read more info from options](https://silviomoreto.github.io/bootstrap-select/options/)
+### fieldOptions
+
+Property        | Default  | Accepted values    | Description
+--------------- | -------- | ---------------    | -----------
+`multiSelect`   | _none_   |    `Boolean`       | If `true`, you can select multiple items. In this case the value will be an `Array`
+`value`         | _none_   |  `String|Number`   | The value of the selected option that gets assigned to the `model`
+`name`          | _none_   |  `String|Number`   | The text that is displayed on the select option
+
+For all possible settings for `fieldOptions`, see https://developer.snapappointments.com/bootstrap-select/options/#bootstrap-version
+
 ## Usage
 #### Multiple select list with array of strings:
 
@@ -25,8 +32,8 @@ Property        | Default  | Accepted values | Description
     model: "skills",
     multi: true,
     required: true,
-    multiSelect: true,
-    selectOptions: {
+    fieldOptions: {
+        multiSelect: true,
         liveSearch: true,
         maxOptions: 3,
         size: 4,
@@ -54,7 +61,7 @@ Property        | Default  | Accepted values | Description
     multiSelect: false,
     values: faker.definitions.address.country,
     default: "United Kingdom",
-    selectOptions: {
+    fieldOptions: {
         liveSearch: true,
         size: 10
     },

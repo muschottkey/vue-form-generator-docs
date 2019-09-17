@@ -10,11 +10,11 @@ Probably the most complete selecting solution for Vue.js, without jQuery.
 
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
-| `values` | _none_ | `Array` or `Function` | List of items. It can be an array with items, or a function, what is resulted an array. The item can be a `String` or an object. You can use `id` and `key` \(under `selectOptions`\) to select any properties of that object as value or name. |
+| `values` | _none_ | `Array` or `Function` | List of items. It can be an array with items, or a function, what is resulted an array. The item can be a `String` or an object. You can use `id` and `key` \(under `fieldOptions`\) to select any properties of that object as value or name. |
 | `max` | _none_ | `Number` | Number of allowed selected options. |
-| `selectOptions` | `{}` | `Object` | Settings to select component. See details below. |
+| `fieldOptions` | `{}` | `Object` | Settings to select component. See details below. |
 
-### `selectOptions`
+### `fieldOptions`
 
 For more details, see the official [Vue-multiselect documentation](https://vue-multiselect.js.org/#sub-props).
 
@@ -63,7 +63,7 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
   required: true,
   validator: validators.required,
   values: faker.definitions.address.country,
-  selectOptions: {
+  fieldOptions: {
     multiSelect: false,
     closeOnSelect: false,
     searchable: false,
@@ -76,13 +76,13 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
 
 ```js
 {
-  type: "vueMultiSelect",    
+  type: "vueMultiSelect",
   model: "library",
   label: "Libraries",
   placeholder: "Select your favorite library",
-  required: true, 
+  required: true,
   validator: validators.required,
-  selectOptions: {
+  fieldOptions: {
     multiple: false,
     key: "name",
     label: "name",
@@ -111,13 +111,13 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
 
 ```js
 {
-  type: "vueMultiSelect",    
+  type: "vueMultiSelect",
   model: "library",
   label: "Libraries",
   placeholder: "Select your favorite library",
-  required: true,  
+  required: true,
   validator: validators.required,
-  selectOptions: {
+  fieldOptions: {
     multiple: false,
     key: "name",
     label: "name",
@@ -147,13 +147,13 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
 
 ```js
 {
-  type: "vueMultiSelect",    
+  type: "vueMultiSelect",
   model: "library",
   label: "Libraries",
   placeholder: "Select your favorite library",
-  required: true, 
+  required: true,
   validator: validators.required,
-  selectOptions: {
+  fieldOptions: {
     multiple: true,
     key: "name",
     label: "name",
@@ -183,20 +183,20 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
 
 ```js
 {
-  type: "vueMultiSelect",    
+  type: "vueMultiSelect",
   model: "countries",
   label: "Countries ",
   placeholder: "Type to search",
-  required: true,  
+  required: true,
   validator: validators.required,
-  selectOptions: {
+  fieldOptions: {
     multiple: true,
     key: "code",
     label: "name",
     searchable: true,
     localSearch: false,
     clearOnSelect: false,
-    closeOnSelect: false,    
+    closeOnSelect: false,
     onSearch: function(searchQuery, id, options) {
       if (searchQuery.length === 0) {
         this.countries = []
@@ -212,8 +212,8 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
     },
   },
   onChanged: function(model, newVal, oldVal, field) {
-    model.selectedCountries = newVal    
-  },    
+    model.selectedCountries = newVal
+  },
   values: [
     {
       "name": "Vue.js",
@@ -235,13 +235,13 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
 
 ```js
 {
-  type: "vueMultiSelect",    
+  type: "vueMultiSelect",
   model: "library",
   label: "Libraries",
   placeholder: "Type to search or add tag",
-  required: true,  
+  required: true,
   validator: validators.required,
-  selectOptions: {
+  fieldOptions: {
     multiple: true,
     key: "code",
     label: "name",
@@ -259,9 +259,9 @@ For more details, see the official [Vue-multiselect documentation](https://vue-m
       value.push(tag);
     }
   },
-  onChanged: function(model, newVal, oldVal, field) {    
+  onChanged: function(model, newVal, oldVal, field) {
     console.log('@tag: ', newVal);
-  },    
+  },
   values: [
     {
       "name": "Javascript",

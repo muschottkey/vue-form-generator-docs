@@ -8,9 +8,9 @@ This is a Google Static Map service field. It's only show a static map.
 
 Property      | Default  | Accepted values | Description
 ------------- | -------- | --------------- | -----------
-`staticMapOptions` | _none_   | `Object` 	   | Settings to static map link. [Read more info from options](https://developers.google.com/maps/documentation/static-maps/intro)
+`fieldOptions` | _none_   | `Object` 	   | Settings to static map link. [Read more info from options](https://developers.google.com/maps/documentation/static-maps/intro)
 
-### staticMapOptions
+### fieldOptions
 Property      | Default  | Accepted values | Description
 ------------- | -------- | --------------- | -----------
 `lat` | `lat`   | `String` 	   | Name of latitude key in model
@@ -39,7 +39,7 @@ Property      | Default  | Accepted values | Description
 	label: "Map",
 	model: "address.geo",
 	visible: false,
-	staticMapOptions: {
+	fieldOptions: {
         lat: "latitude",
         lng: "longitude",
         zoom: 6,

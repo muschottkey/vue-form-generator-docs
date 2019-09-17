@@ -1,8 +1,8 @@
 # pikaday field
 
-A refreshing JavaScript Datepicker — lightweight, no dependencies, modular CSS.
+A refreshing JavaScript Datepicker — lightweight, few dependencies, modular CSS.
 
-> Please note, this field depend on the following library:
+> Please note, this field depends on the following libraries:
 - [Pikaday](https://github.com/dbushell/Pikaday)
 - [Moment.js](http://momentjs.com/) (see [issue #59](https://github.com/vue-generators/vue-form-generator/issues/59))
 
@@ -12,10 +12,10 @@ Property 		| Default | Accepted values | Description
 --------------- | ------- | --------------- | -----------
 `autocomplete` | _none_   | [see doc](https://html.spec.whatwg.org/multipage/forms.html#autofill)        | Indicates whether the value of the control can be automatically completed by the browser.
 `placeholder` | _none_   | `String` 	   | Placeholder text for input field
-`pikadayOptions`   | `{}`    | `Object`        | Settings of component. See details below.
+`fieldOptions`   | `{}`    | `Object`        | Settings of component. See details below.
 `readonly`    | `false`  | `Boolean` 	   | If true, the input field is read only
 
-### `pikadayOptions`
+### `fieldOptions`
 
 For more details, see the official [Pikaday documentation](https://github.com/dbushell/Pikaday#configuration).
 
@@ -65,8 +65,8 @@ i18n: {
   label: "Simple datepicker",
   placeholder: "User's birth of date",
   model: "date",
-  validator: validators.date,  
-  pikadayOptions: {
+  validator: validators.date,
+  fieldOptions: {
     position: "top left"
   }
 }
