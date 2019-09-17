@@ -8,10 +8,18 @@ _Please note! This field type is deprecated. Please use the common [`input`](inp
 Property      | Default  | Accepted values | Description
 ------------- | -------- | --------------- | -----------
 `autocomplete` | _none_   | [see doc](https://html.spec.whatwg.org/multipage/forms.html#autofill)        | Indicates whether the value of the control can be automatically completed by the browser.
-`max` 		  | _none_   | `Number` 	   | Max value (need to use `validators.number`)
-`pattern`		  | _none_   | `RegExp` 	   | RegExp pattern for validation (need to use `validators.regexp`)
 `placeholder` | _none_   | `String` 	   | Placeholder text for input field
-`readonly`    | `false`  | `Boolean` 	   | If true, the input field is read only
+`readonly`    | `false`  | `Boolean` 	   | Ir true, the input field is read only
+`pattern`		  | _none_   | `RegExp` 	   | RegExp pattern for validation (need to use `validators.regexp`)
+
+## fieldOptions properties
+
+Property      | Default  | Accepted values | Description
+------------- | -------- | --------------- | -----------
+`max` 		  | _none_   | `Number` 	   | Max value (need to use `validators.number`)
+`min` 		  | _none_   | `Number` 	   | Min value (need to use `validators.number`)
+`rows` 		  | `2`   | `Number` 	   | Number of rows for the textarea
+
 
 ## Usage
 #### Featured and required name input field, where the length of name must be between 3 and 50 characters:
@@ -22,8 +30,10 @@ Property      | Default  | Accepted values | Description
 	label: "Name",
 	model: "name",
 	featured: true,
-	min: 3,
-	max: 50,
+  fieldOptions: {
+    min: 3,
+    max: 50,
+  },
 	required: true,
 	placeholder: "User's full name",
 	validator: validators.string
@@ -35,7 +45,9 @@ Property      | Default  | Accepted values | Description
 	type: "text",
 	label: "Website",
 	model: "web",
-	max: 255,
+  fieldOptions: {
+    max: 255,
+  },
 	validator: [
 		validators.string
 		validators.url
@@ -48,7 +60,7 @@ Property      | Default  | Accepted values | Description
     type: "text",
     label: "Phone",
     model: "phone",
-    pattern: "^\\+[0-9]{2}-[237]0-[0-9]{3}-[0-9]{4}$",
+    pattern: "^\\+[0-9]{2}-[237]0-[0-9]{3}-[0-9]{4}$"
     placeholder: "User's phone number",
     hint: "Format: +36-(20|30|70)-000-0000",
     help: "You can use any <b>formatted</b> texts. Or place a <a target='_blank' href='https://github.com/vue-generators/vue-form-generator'>link</a> to another site."

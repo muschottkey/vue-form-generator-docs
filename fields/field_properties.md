@@ -9,6 +9,7 @@
 | model | _none_ | `String` | Name of property in the model |
 | id | _auto-generated_ | `String` | `id` of the field. If not set, will be auto-generated from the slugified version of either: `schema.inputName`, `schema.label` or `schema.model`, in that order. If the [`fieldIdPrefix` option](/options.md) is set, it's value will be prepended to both manual & auto-generated ids. |
 | inputName | _none_ | `String` | set `name` attribute to `input` field. You can use it to generate normal HTML Forms and submit the field values to server-side. [Example](https://github.com/vue-generators/vue-form-generator/tree/master/examples/post-form) |
+| fieldOptions | `{}` | `Object` | Key value options for the input field. |
 | featured | `false` | `Boolean` | is it a featured \(bold\) field? Can be a function too. |
 | visible | `true` | `Boolean` | if `false`, field will be hidden. Can be a function too. |
 | disabled | `false` | `Boolean` | if `true`, field will be disabled. Can be a function too. |
@@ -42,7 +43,9 @@
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+      inputType: "text",
+    },
     label: "Name",
     model: "name",
     id: "full_name",
@@ -68,7 +71,7 @@
 
 ## Dynamic visibility
 
-With the `visible, disabled, readonly` and `featured` properties, you can also show or disable fields dynamically.  
+With the `visible, disabled, readonly` and `featured` properties, you can also show or disable fields dynamically.
 Those properties can take a `Function` with a `model` parameters and expect a `Boolean` in return.
 
 ```js
@@ -115,7 +118,7 @@ For fields [select](select.md), [checklist](checklist.md), [selectEx](selectex.m
 
 ## Custom Attributes
 
-You can add custom HTML Attributes, such as `data-attributes`, to fields by using an `attributes` object. 
+You can add custom HTML Attributes, such as `data-attributes`, to fields by using an `attributes` object.
 
 You can also specify the attributes of the surrounding wrapper and label:
 
@@ -124,7 +127,9 @@ The attributes object is broken up into "wrapper", "input" and "label" objects w
 ```javascript
 {
   type: "input",
-  inputType: "text",
+  fieldOptions: {
+    inputType: "text",
+  },
   model: "first_name",
   label: "First Name",
   attributes: {
@@ -140,7 +145,9 @@ If you do not specify where the attributes go, and just provide a flat "attribut
 ```javascript
 {
   type: "input",
-  inputType: "text",
+  fieldOptions: {
+    inputType: "text",
+  },
   model: "first_name",
   label: "First Name",
   attributes: {

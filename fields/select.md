@@ -7,9 +7,9 @@ This is a HTML `select` & `option` selection list field. You can only select one
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
 | `values` | _none_ | `Array` or `Function` | List of items. It can be an array with items, or a `Function`, what is resulted an array. The item will be a `String` or an object with an `id` and a `name` properties. |
-| `selectOptions` | {} | `Object` | Settings to select component. See details below. |
+| `fieldOptions` | {} | `Object` | Settings to select component. See details below. |
 
-### `selectOptions`
+### `fieldOptions`
 
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |

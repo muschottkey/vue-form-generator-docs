@@ -20,10 +20,12 @@ See "attributes compatibility" at the end of this page.
 ```js
 {
     type: "input",
-    inputType: "text",
+    fieldOptions: {
+      inputType: "text",
+      maxlength: 50,
+    },
     label: "Name",
     model: "name",
-    maxlength: 50,
     required: true,
     placeholder: "User's full name",
     validator: validators.string

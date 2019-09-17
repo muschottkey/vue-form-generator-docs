@@ -7,7 +7,7 @@ This is simple list of radio buttons to select
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
 | `values` | _none_ | `Array` or `Function` | List of items. See details below. |
-| `radiosOptions` | {} | `Object` | Settings to radios component. See details below. |
+| `fieldOptions` | {} | `Object` | Settings to radios component. See details below. |
 
 ### `values`
 It can be an array with items, or a `Function` then returns an array of items. The items can be a `String`, `Boolean`, `Number` or an `Object` (see below). |
@@ -17,13 +17,12 @@ It can be an array with items, or a `Function` then returns an array of items. T
 | --- | --- | --- | --- |
 | `name` | _none_ | `String` | The text displayed beside the radio button (ie; Label) |
 | `value` | _none_ | `String` | The value of the radio option stored in the model |
-| `disabled` | _none_ | `Boolean` or `Function` | Used to disable this radio option |
 
 You can change `value` and `name` \(under `radiosOptions`\) to select any properties of that object as the value or name.
 
 If `disabled` is set to a function, it will be passed a reference to the `model`
 
-### `radiosOptions`
+### `fieldOptions`
 
 | Property | Default | Accepted values | Description |
 | --- | --- | --- | --- |
@@ -60,9 +59,9 @@ If `disabled` is set to a function, it will be passed a reference to the `model`
     values: [
         { name: "Deep Pink", value:"#FF1493" },
         { name: "Peach Puff", value:"#FFDAB9" },
-        { name: "Dark Orange", value:"#FF8C00", disabled: (model) => { 
-            if(model.disableOrange) { return true; } 
-            return false; 
+        { name: "Dark Orange", value:"#FF8C00", disabled: (model) => {
+            if(model.disableOrange) { return true; }
+            return false;
         },
         { name: "Light Green", value:"#90EE90", disabled: true }
     ]
@@ -86,7 +85,7 @@ If `disabled` is set to a function, it will be passed a reference to the `model`
         { common_name: "Pantropical spotted dolphin", binomial_nomenclature:"Stenella attenuata" },
         { common_name: "Chilean dolphin", binomial_nomenclature:"Cephalorhynchus eutropia" }
     ],
-    radiosOptions: {
+    fieldOptions: {
         value:"binomial_nomenclature",
         name:"common_name"
     }

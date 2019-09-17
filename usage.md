@@ -47,7 +47,9 @@ export default {
             fields: [
               {
                 type: 'input',
-                inputType: 'text',
+                fieldOptions: {
+                  inputType: "text",
+                },
                 label: 'ID (disabled text field)',
                 model: 'id',
                 readonly: true,
@@ -55,7 +57,9 @@ export default {
               },
               {
                 type: 'input',
-                inputType: 'text',
+                fieldOptions: {
+                  inputType: "text",
+                },
                 label: 'Name',
                 model: 'name',
                 id: 'user_name',
@@ -65,14 +69,18 @@ export default {
               },
               {
                 type: 'input',
-                inputType: 'email',
+                fieldOptions: {
+                  inputType: 'email',
+                },
                 label: 'E-mail',
                 model: 'email',
                 placeholder: 'User\'s e-mail address'
               },
               {
                 type: 'input',
-                inputType: 'password',
+                fieldOptions: {
+                  inputType: 'password',
+                },
                 label: 'Password',
                 model: 'password',
                 min: 6,
